@@ -6,6 +6,8 @@ import { Layout } from "./components/layout";
 import { ThemeProvider } from "./context/theme-provider";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CityPage } from "./pages/city-page";
+import { Analytics } from '@vercel/analytics/react';
+ 
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,6 +32,7 @@ function App() {
             </Routes>
           </Layout>
           <Toaster richColors />
+          <Analytics /> 
         </ThemeProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
